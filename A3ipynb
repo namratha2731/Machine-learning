@@ -1,0 +1,63 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPiaj82SpS9GepyRfIZsZtR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/namratha2731/ML-/blob/main/A3ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as nm\n",
+        "\n",
+        "data=pd.read_excel(r\"Lab Session Data.xlsx\", sheet_name='Purchase data')\n",
+        "data['status'] = data['Payment (Rs)'].apply(lambda x: \"RICH\" if x > 200 else \"POOR\")\n",
+        "print(data[['Payment (Rs)', 'status']].head())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "unwdH7Djv8iL",
+        "outputId": "191c3bd1-f025-4527-fa4a-f32f588015b7"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Payment (Rs) status\n",
+            "0           386   RICH\n",
+            "1           289   RICH\n",
+            "2           393   RICH\n",
+            "3           110   POOR\n",
+            "4           280   RICH\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
